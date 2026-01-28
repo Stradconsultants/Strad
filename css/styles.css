@@ -4988,3 +4988,346 @@ td:last-child {
         line-height: var(--vspace-0_75);
     }
 }
+
+
+/* ===================================================================
+ * # ORGANIZATION TREE STYLES
+ *
+ *
+ * ------------------------------------------------------------------- */
+
+.org-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.org-level {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.org-level-1 {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.org-level-2 {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.org-member {
+    flex: 1;
+    min-width: 280px;
+    max-width: 300px;
+    background: linear-gradient(135deg, #e8e8e8 0%, #d9d9d9 100%);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.org-member:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #d9d9d9 0%, #cccccc 100%);
+}
+
+.org-level-1 .org-member {
+    min-width: 320px;
+    max-width: 350px;
+    background: linear-gradient(135deg, #d0d0d0 0%, #bebebe 100%);
+    border: 2px solid #4a5568;
+    padding: 40px 30px;
+}
+
+.org-level-1 .org-member::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: #4a5568;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+}
+
+.org-member__image {
+    margin-bottom: 20px;
+}
+
+.org-member__image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4a5568;
+    transition: all 0.3s ease;
+}
+
+.org-member:hover .org-member__image img {
+    border-color: #2d3748;
+    box-shadow: 0 0 15px rgba(74, 85, 104, 0.3);
+}
+
+.org-level-1 .org-member__image img {
+    width: 140px;
+    height: 140px;
+}
+
+.org-member__name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+    margin: 15px 0 8px 0;
+    font-family: var(--font-1);
+}
+
+.org-level-1 .org-member__name {
+    font-size: 22px;
+    margin: 20px 0 10px 0;
+    color: #0f0f0f;
+}
+
+.org-member__title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3748;
+    margin: 8px 0;
+    font-family: var(--font-1);
+}
+
+.org-level-1 .org-member__title {
+    font-size: 15px;
+    color: #1a1a1a;
+}
+
+.org-member__qualification {
+    font-size: 12px;
+    color: #404040;
+    margin: 8px 0 12px 0;
+    font-style: italic;
+    font-family: var(--font-1);
+}
+
+.org-member__bio {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #2d3748;
+    margin: 12px 0 0 0;
+    font-family: var(--font-1);
+}
+
+.org-level-1 .org-member__bio {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 15px 0 0 0;
+    color: #1a1a1a;
+}
+
+/* Connecting line from founder to team */
+.org-connector {
+    position: relative;
+    height: 50px;
+    width: 2px;
+    background: linear-gradient(to bottom, #4a5568, #cbd5e0);
+    margin: -30px 0 0 0;
+}
+
+.org-connector::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 2px;
+    background: linear-gradient(to right, #cbd5e0 0%, #4a5568 50%, #cbd5e0 100%);
+}
+
+.org-connector::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -149px;
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(to bottom, #cbd5e0, #cbd5e0);
+}
+
+/* Vertical lines for each team member */
+.org-level-2 .org-member::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(to bottom, #cbd5e0, #cbd5e0);
+}
+
+.org-level-2 .org-member::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background: #cbd5e0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    .org-member {
+        min-width: 250px;
+        max-width: 270px;
+        padding: 25px 15px;
+    }
+
+    .org-level-1 .org-member {
+        min-width: 280px;
+        max-width: 300px;
+        padding: 30px 20px;
+    }
+
+    .org-member__image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .org-level-1 .org-member__image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .org-member__name {
+        font-size: 16px;
+    }
+
+    .org-level-1 .org-member__name {
+        font-size: 19px;
+    }
+
+    .org-connector::before {
+        width: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .org-connector::after {
+        left: -125px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .org-level {
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .org-level-1 {
+        margin-bottom: 70px;
+    }
+
+    .org-member {
+        min-width: 220px;
+        max-width: 240px;
+        padding: 20px 12px;
+    }
+
+    .org-level-1 .org-member {
+        min-width: 240px;
+        max-width: 260px;
+        padding: 25px 15px;
+    }
+
+    .org-connector::before {
+        width: 220px;
+    }
+
+    .org-connector::after {
+        left: -110px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .org-level-2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .org-member {
+        min-width: 200px;
+        max-width: 220px;
+        padding: 18px 10px;
+    }
+
+    .org-level-1 .org-member {
+        min-width: 220px;
+        max-width: 240px;
+        padding: 22px 12px;
+    }
+
+    .org-member__image img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .org-level-1 .org-member__image img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .org-member__name {
+        font-size: 15px;
+        margin: 12px 0 6px 0;
+    }
+
+    .org-level-1 .org-member__name {
+        font-size: 17px;
+        margin: 15px 0 8px 0;
+    }
+
+    .org-member__qualification {
+        font-size: 11px;
+    }
+
+    .org-member__bio {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .org-level-1 .org-member__bio {
+        font-size: 13px;
+    }
+
+    .org-connector::before {
+        width: 100%;
+    }
+
+    .org-connector::after {
+        display: none;
+    }
+
+    .org-level-2 .org-member::after {
+        display: none;
+    }
+
+    .org-level-2 .org-member::before {
+        left: 50%;
+        top: -30px;
+        height: 30px;
+    }
+}
