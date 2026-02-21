@@ -681,8 +681,64 @@
     }; // end ssSmoothScroll
 
 
-   /* Initialize
+   /* Photo Modal
     * ------------------------------------------------------ */
+    const ssOrgPhotoModal = function() {
+
+        // Get all clickable images with modal data attribute
+        const clickableImages = document.querySelectorAll('.org-card__image--clickable img');
+
+        clickableImages.forEach(function(img) {
+            img.addEventListener('click', function(e) {
+                e.preventDefault();
+                const modalId = this.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                }
+            });
+        });
+
+        // Close modal functionality
+        const closeButtons = document.querySelectorAll('.org-modal__close');
+        closeButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const modal = this.closest('.org-modal');
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto'; // Re-enable scrolling
+                }
+            });
+        });
+
+        // Close modal on overlay click
+        const modals = document.querySelectorAll('.org-modal');
+        modals.forEach(function(modal) {
+            const overlay = modal.querySelector('.org-modal__overlay');
+            if (overlay) {
+                overlay.addEventListener('click', function() {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto'; // Re-enable scrolling
+                });
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                modals.forEach(function(modal) {
+                    if (modal.classList.contains('active')) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = 'auto'; // Re-enable scrolling
+                    }
+                });
+            }
+        });
+
+    }; // end ssOrgPhotoModal
+  
     (function ssInit() {
 
         ssPreloader();
@@ -694,8 +750,7 @@
         sstabs();
         ssMailChimpForm();
         ssAlertBoxes();
-        ssSmoothScroll();
-
+        ssSmoothScroll();        ssOrgPhotoModal();
     })();
 
 })(document.documentElement);
