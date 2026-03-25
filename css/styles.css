@@ -5334,21 +5334,18 @@ td:last-child {
 
 /* ===== GET DIRECTIONS BUTTON ===== */
 
-/* Ensure location content stacks vertically */
 .location {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* Button container */
 .location-btn {
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
 }
 
-/* Button styling */
 .location-btn a {
   display: inline-block;
   padding: 7px 16px;
@@ -5361,33 +5358,23 @@ td:last-child {
   transition: all 0.3s ease;
 }
 
-/* Hover effect */
 .location-btn a:hover {
   background-color: #084a94;
   transform: translateY(-1px);
 }
 
 
-/* ===== CONTACTS + OPENING HOURS ALIGNMENT ===== */
+/* ===== CONTACTS + OPENING HOURS (FINAL FIX) ===== */
 
-/* Force only these two blocks side-by-side safely */
-.s-footer__main .grid-cols__column.footer-block {
-  display: inline-block;
-  vertical-align: top;
-  width: 48%;
+.s-footer__main-end {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-/* Space between them */
-.s-footer__main .grid-cols__column.footer-block + .footer-block {
-  margin-left: 4%;
-}
-
-/* Responsive fallback */
-@media (max-width: 768px) {
-  .s-footer__main .grid-cols__column.footer-block {
-    width: 100%;
-    margin-left: 0;
-  }
+.s-footer__main-end .footer-block {
+  flex: 1;
+  min-width: 220px;
 }
 
 
@@ -5398,7 +5385,6 @@ td:last-child {
   font-size: 13px;
 }
 
-/* Mobile fix */
 @media (max-width: 768px) {
   .s-footer__bottom {
     white-space: normal;
