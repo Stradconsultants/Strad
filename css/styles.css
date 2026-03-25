@@ -5366,3 +5366,11 @@ td:last-child {
   background-color: #084a94;
   transform: translateY(-1px);
 }
+
+   /* Only target contacts + opening hours */
+.grid-cols__column.footer-block {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  margin-right: 5%;
+}
