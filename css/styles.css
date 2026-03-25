@@ -5399,3 +5399,14 @@ td:last-child {
     white-space: normal;
   }
 }
+
+   /* ===== FINAL FIX (WORKING) ===== */
+
+.contact-hours {
+  display: flex;
+  gap: 40px;
+}
+
+.contact-hours > div {
+  flex: 1;
+}
