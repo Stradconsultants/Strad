@@ -5378,3 +5378,30 @@ td:last-child {
 .grid-cols__column {
   min-width: 220px;
 }
+
+   /* ===== SAFE FOOTER FIX ===== */
+
+/* Contacts + Opening Hours side-by-side */
+.contact-hours-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.contact-hours-wrapper .footer-block {
+  flex: 1;
+  min-width: 220px;
+}
+
+   /* Footer bottom single line */
+.s-footer__bottom {
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+/* Allow wrap on mobile */
+@media (max-width: 768px) {
+  .s-footer__bottom {
+    white-space: normal;
+  }
+}
