@@ -5332,7 +5332,7 @@ td:last-child {
     }
 }
 
-/* ===== GET DIRECTIONS BUTTON FIX ===== */
+/* ===== GET DIRECTIONS BUTTON ===== */
 
 /* Ensure location content stacks vertically */
 .location {
@@ -5344,7 +5344,7 @@ td:last-child {
 /* Button container */
 .location-btn {
   margin-top: 10px;
-  margin-bottom: 20px; /* 👈 ADD THIS LINE */
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -5367,39 +5367,38 @@ td:last-child {
   transform: translateY(-1px);
 }
 
-   /* Force footer columns side-by-side */
-.s-footer__main-content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* adjust if needed */
-  gap: 40px;
+
+/* ===== CONTACTS + OPENING HOURS ALIGNMENT ===== */
+
+/* Force only these two blocks side-by-side safely */
+.s-footer__main .grid-cols__column.footer-block {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
 }
 
-/* Ensure contacts + hours stay inline */
-.grid-cols__column {
-  min-width: 220px;
+/* Space between them */
+.s-footer__main .grid-cols__column.footer-block + .footer-block {
+  margin-left: 4%;
 }
 
-   /* ===== SAFE FOOTER FIX ===== */
-
-/* Contacts + Opening Hours side-by-side */
-.contact-hours-wrapper {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
+/* Responsive fallback */
+@media (max-width: 768px) {
+  .s-footer__main .grid-cols__column.footer-block {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
-.contact-hours-wrapper .footer-block {
-  flex: 1;
-  min-width: 220px;
-}
 
-   /* Footer bottom single line */
+/* ===== FOOTER BOTTOM TEXT ===== */
+
 .s-footer__bottom {
   white-space: nowrap;
   font-size: 13px;
 }
 
-/* Allow wrap on mobile */
+/* Mobile fix */
 @media (max-width: 768px) {
   .s-footer__bottom {
     white-space: normal;
