@@ -5332,70 +5332,53 @@ td:last-child {
     }
 }
    
-/* ===== GET DIRECTIONS BUTTON ===== */
-
-.location {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
+/* 1. Space below the Get Directions button */
 .location-btn {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  width: 100%;
+    margin-bottom: 40px !important;
 }
 
-.location-btn a {
-  display: inline-block;
-  padding: 7px 16px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #ffffff;
-  background-color: #0a66c2;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+/* 2. Force side-by-side using Table Layout */
+.footer-layout-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* improved */
 }
 
-.location-btn a:hover {
-  background-color: #084a94;
-  transform: translateY(-1px);
+.footer-table-cell {
+    vertical-align: top;
+    padding-right: 30px;
+    width: 50%;
 }
 
-
-/* ===== CONTACTS + OPENING HOURS (STRONG FIX) ===== */
-
-.s-footer__main-end {
-  display: flex !important;        /* force override */
-  flex-direction: row !important;  /* ensure horizontal */
-  gap: 40px;
-  flex-wrap: nowrap !important;    /* prevent stacking */
+/* Small spacing improvements */
+.footer-table-cell h6 {
+    margin-bottom: 10px;
 }
 
-.s-footer__main-end .footer-block {
-  width: 50% !important;           /* equal columns */
-  display: block !important;
+.footer-table-cell ul {
+    margin: 0;
+    padding: 0;
 }
 
+.footer-table-cell li {
+    margin-bottom: 6px;
+}
 
-/* ===== FOOTER BOTTOM TEXT ===== */
-
+/* 3. Bottom line fix */
 .s-footer__bottom {
-  white-space: nowrap;
-  font-size: 13px;
+    white-space: nowrap !important;
+    display: block !important;
 }
 
-@media (max-width: 768px) {
-  .s-footer__main-end {
-    flex-direction: column !important;  /* mobile stack */
-  }
+/* 4. Mobile: Stack them */
+@media screen and (max-width: 600px) {
+    .footer-table-cell {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
-  .s-footer__main-end .footer-block {
-    width: 100% !important;
-  }
-
-  .s-footer__bottom {
-    white-space: normal;
-  }
+    .s-footer__bottom {
+        white-space: normal !important;
+    }
 }
