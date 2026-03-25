@@ -5367,10 +5367,14 @@ td:last-child {
   transform: translateY(-1px);
 }
 
-   /* Only target contacts + opening hours */
-.grid-cols__column.footer-block {
-  display: inline-block;
-  vertical-align: top;
-  width: 45%;
-  margin-right: 5%;
+   /* Force footer columns side-by-side */
+.s-footer__main-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* adjust if needed */
+  gap: 40px;
+}
+
+/* Ensure contacts + hours stay inline */
+.grid-cols__column {
+  min-width: 220px;
 }
