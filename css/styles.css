@@ -5364,17 +5364,18 @@ td:last-child {
 }
 
 
-/* ===== CONTACTS + OPENING HOURS (FINAL FIX) ===== */
+/* ===== CONTACTS + OPENING HOURS (STRONG FIX) ===== */
 
 .s-footer__main-end {
-  display: flex;
+  display: flex !important;        /* force override */
+  flex-direction: row !important;  /* ensure horizontal */
   gap: 40px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap !important;    /* prevent stacking */
 }
 
 .s-footer__main-end .footer-block {
-  flex: 1;
-  min-width: 220px;
+  width: 50% !important;           /* equal columns */
+  display: block !important;
 }
 
 
@@ -5386,6 +5387,14 @@ td:last-child {
 }
 
 @media (max-width: 768px) {
+  .s-footer__main-end {
+    flex-direction: column !important;  /* mobile stack */
+  }
+
+  .s-footer__main-end .footer-block {
+    width: 100% !important;
+  }
+
   .s-footer__bottom {
     white-space: normal;
   }
