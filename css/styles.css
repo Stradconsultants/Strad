@@ -5399,3 +5399,29 @@ td:last-child {
     white-space: normal;
   }
 }
+
+   /* MOBILE FOOTER OPTIMIZATION */
+@media screen and (max-width: 600px) {
+    /* 1. Force the table cells to become full-width blocks */
+    .footer-table-cell {
+        display: block !important;
+        width: 100% !important;
+        padding-right: 0 !important;
+        margin-bottom: 25px; /* Adds space between Contacts and Opening Hours */
+    }
+
+    /* 2. Fix the "Opening Hours" alignment so it's not squashed */
+    .opening-hours li {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 280px; /* Keeps it neat on small screens */
+    }
+
+    /* 3. Center the copyright line for a cleaner look */
+    .s-footer__bottom {
+        white-space: normal !important;
+        text-align: center;
+        line-height: 1.8;
+    }
+}
