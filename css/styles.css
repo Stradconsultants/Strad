@@ -5332,7 +5332,8 @@ td:last-child {
     }
 }
 
-/* 1. THE BLUE BUTTON (RESTORED STYLE) */
+/* ===== GET DIRECTIONS BUTTON ===== */
+
 .location {
   display: flex;
   flex-direction: column;
@@ -5341,56 +5342,60 @@ td:last-child {
 
 .location-btn {
   margin-top: 10px;
-  margin-bottom: 35px; /* Increased space below button */
+  margin-bottom: 20px;
   width: 100%;
 }
 
 .location-btn a {
-  display: inline-block !important;
-  padding: 10px 20px !important;
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  color: #ffffff !important;
-  background-color: #0a66c2 !important;
-  text-decoration: none !important;
-  border-radius: 4px !important;
+  display: inline-block;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #0a66c2;
+  text-decoration: none;
+  border-radius: 4px;
   transition: all 0.3s ease;
 }
 
 .location-btn a:hover {
-  background-color: #084a94 !important;
+  background-color: #084a94;
   transform: translateY(-1px);
 }
 
-/* 2. CONTACTS + HOURS (SIDE-BY-SIDE TABLE FIX) */
-.footer-layout-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: auto;
-  margin-top: 10px;
+
+/* ===== CONTACTS + OPENING HOURS (STRONG FIX) ===== */
+
+.s-footer__main-end {
+  display: flex !important;        /* force override */
+  flex-direction: row !important;  /* ensure horizontal */
+  gap: 40px;
+  flex-wrap: nowrap !important;    /* prevent stacking */
 }
 
-.footer-table-cell {
-  vertical-align: top;
-  padding-right: 30px;
-  width: 50%;
-}
-
-/* 3. FOOTER BOTTOM (ONE LINE) */
-.s-footer__bottom {
-  white-space: nowrap !important;
-  font-size: 13px;
+.s-footer__main-end .footer-block {
+  width: 50% !important;           /* equal columns */
   display: block !important;
 }
 
-/* 4. MOBILE RESPONSIVE */
+
+/* ===== FOOTER BOTTOM TEXT ===== */
+
+.s-footer__bottom {
+  white-space: nowrap;
+  font-size: 13px;
+}
+
 @media (max-width: 768px) {
-  .footer-table-cell {
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
+  .s-footer__main-end {
+    flex-direction: column !important;  /* mobile stack */
   }
+
+  .s-footer__main-end .footer-block {
+    width: 100% !important;
+  }
+
   .s-footer__bottom {
-    white-space: normal !important;
+    white-space: normal;
   }
 }
