@@ -5331,3 +5331,18 @@ td:last-child {
         height: 30px;
     }
 }
+
+   .directions-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #0a66c2;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.directions-btn:hover {
+  background-color: #084a94;
+}
