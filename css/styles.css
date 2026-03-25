@@ -5382,3 +5382,40 @@ td:last-child {
     white-space: normal;
   }
 }
+
+   /* 1. BUTTON SPACING (SMOOTH GAP) */
+.location-btn {
+    margin-bottom: 35px; /* Creates a clean break before contact info */
+}
+
+/* 2. SIDE-BY-SIDE ALIGNMENT */
+/* We target the parent and tell it to display these two blocks in a row */
+.s-footer__main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 40px; /* Space between the columns */
+}
+
+/* Ensure these specific columns don't take up 100% width */
+.footer-contact-col, 
+.footer-hours-col {
+    flex: 0 1 auto; 
+    min-width: 250px;
+}
+
+/* 3. FOOTER BOTTOM (SINGLE LINE) */
+.s-footer__bottom {
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 4. RESPONSIVE (SMOOTH STACKING ON MOBILE) */
+@media screen and (max-width: 800px) {
+    .s-footer__bottom {
+        white-space: normal; /* Allows wrap only on small phones */
+    }
+}
