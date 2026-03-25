@@ -5341,13 +5341,22 @@ td:last-child {
 .footer-layout-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: auto;
+    table-layout: fixed;
 }
 
 .footer-table-cell {
     vertical-align: top;
     padding-right: 30px; /* Space between the two columns */
     width: 50%;
+}
+   
+   .footer-table-cell h6 {
+    margin-bottom: 10px;
+}
+
+.footer-table-cell ul {
+    margin: 0;
+    padding: 0;
 }
 
 /* 3. Bottom line fix */
