@@ -5341,7 +5341,7 @@ td:last-child {
 .footer-layout-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
+    table-layout: auto;
 }
 
 .footer-table-cell {
@@ -5354,10 +5354,6 @@ td:last-child {
     margin-bottom: 10px;
 }
 
-.footer-table-cell ul {
-    margin: 0;
-    padding: 0;
-}
 
 /* 3. Bottom line fix */
 .s-footer__bottom {
