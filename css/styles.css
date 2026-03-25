@@ -5332,7 +5332,7 @@ td:last-child {
     }
 }
 
-/* 1. BLUE BUTTON (THE STYLE YOU LIKED) */
+/* 1. BLUE BUTTON STYLE */
 .location {
   display: flex;
   flex-direction: column;
@@ -5341,7 +5341,7 @@ td:last-child {
 
 .location-btn {
   margin-top: 10px;
-  margin-bottom: 35px !important; /* Increased space below button */
+  margin-bottom: 35px !important;
 }
 
 .location-btn a {
@@ -5356,41 +5356,26 @@ td:last-child {
   transition: all 0.3s ease;
 }
 
-.location-btn a:hover {
-  background-color: #084a94 !important;
-  transform: translateY(-1px);
+/* 2. THE FLEXBOX FIX (SIDE-BY-SIDE ON DESKTOP) */
+.footer-flex-container {
+  display: flex;
+  flex-direction: row; /* Desktop: Side-by-side */
+  gap: 60px;           /* Large gap between Contacts and Hours */
+  align-items: flex-start;
 }
 
-/* 2. DESKTOP LAYOUT (SIDE-BY-SIDE VIA TABLE) */
-.footer-layout-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: auto;
+.footer-contact-item {
+  flex: 1;
+  min-width: 200px;
 }
 
-.footer-table-cell {
-  vertical-align: top;
-  padding-right: 30px;
-  width: 50%;
-}
-
-/* 3. MOBILE FIX (STACKING THE COLUMNS) */
+/* 3. MOBILE FIX (STACKING ON PHONES) */
 @media screen and (max-width: 768px) {
-  /* This forces the Table to break and stack vertically on phones */
-  .responsive-table, 
-  .responsive-table tbody, 
-  .responsive-table tr, 
-  .responsive-table td {
-    display: block !important;
-    width: 100% !important;
+  .footer-flex-container {
+    flex-direction: column; /* Mobile: Stack on top of each other */
+    gap: 30px;              /* Space between the two blocks */
   }
 
-  /* Adds space between Contacts and Opening Hours on mobile */
-  .footer-table-cell:first-child {
-    margin-bottom: 35px !important;
-  }
-
-  /* Center the Bottom Line on Mobile */
   .s-footer__bottom {
     white-space: normal !important;
     text-align: center !important;
@@ -5398,7 +5383,7 @@ td:last-child {
   }
 }
 
-/* 4. FOOTER BOTTOM (ONE LINE ON DESKTOP) */
+/* 4. FOOTER BOTTOM (DESKTOP) */
 .s-footer__bottom {
   white-space: nowrap !important;
   font-size: 13px;
