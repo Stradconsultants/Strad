@@ -5372,3 +5372,29 @@ td:last-child {
         white-space: normal !important;
     }
 }
+
+   /* RESTORE THE BLUE BUTTON STYLE */
+.location-btn a {
+    display: inline-block !important;
+    background-color: #0a66c2 !important; /* Professional Blue */
+    color: #ffffff !important;            /* White text */
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    transition: background-color 0.3s ease;
+    border: none !important;
+}
+
+/* HOVER EFFECT */
+.location-btn a:hover {
+    background-color: #084a94 !important; /* Slightly darker on hover */
+    color: #ffffff !important;
+}
+
+/* ADJUST SPACING ABOVE AND BELOW */
+.location-btn {
+    margin-top: 15px !important;
+    margin-bottom: 40px !important; 
+}
